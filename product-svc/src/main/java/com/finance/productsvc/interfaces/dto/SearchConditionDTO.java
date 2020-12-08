@@ -1,10 +1,10 @@
-package com.finance.productsvc.domain.product.entity.valueobject;
+package com.finance.productsvc.interfaces.dto;
 
 /**
  * @author daitechang
  * @create: 2020-12-08
  **/
-public class SearchCondition {
+public class SearchConditionDTO {
     /**
      * 担保方式
      */
