@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: product-svc
+  mvc:
+    servlet:
+      load-on-startup: 1
