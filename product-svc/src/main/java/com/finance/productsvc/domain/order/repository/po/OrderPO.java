@@ -1,9 +1,12 @@
 package com.finance.productsvc.domain.order.repository.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
  * @author daitechang
@@ -19,6 +22,7 @@ public class OrderPO {
     /**
      * 订单id
      */
+    @TableId(type = IdType.AUTO)
     Integer id;
     /**
      * 产品id
@@ -36,4 +40,24 @@ public class OrderPO {
      * 订单号
      */
     String orderNum;
+    /**
+     * 创建时间
+     */
+    Date createTime;
+    /**
+     * 截止时间
+     */
+    Date finishTime;
+    /**
+     * 现存接单机构数
+     */
+    Integer orgNum;
+    /**
+     * 需求状态
+     */
+    String status;
+    /**
+     * 业务类型
+     */
+    Integer pType;
 }
