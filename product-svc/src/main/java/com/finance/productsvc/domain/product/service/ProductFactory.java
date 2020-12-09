@@ -11,10 +11,15 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 public class ProductFactory {
-
+    /**
+     * 创建DO
+     *
+     * @param productPO
+     * @return
+     */
     Product createProductDO(ProductPO productPO) {
         Product product = new Product();
-        BeanUtils.copyProperties(product, productPO);
+        BeanUtils.copyProperties(productPO, product);
         return product;
     }
 }

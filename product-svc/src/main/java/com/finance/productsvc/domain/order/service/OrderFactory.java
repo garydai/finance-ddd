@@ -5,8 +5,6 @@ import com.finance.productsvc.domain.order.repository.po.OrderPO;
 import com.finance.productsvc.infrastructure.util.IdGenerator;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
 /**
  * @author daitechang
  * @create: 2020-12-09

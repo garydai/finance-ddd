@@ -4,11 +4,13 @@ import com.finance.productsvc.domain.order.repository.facade.OrderRepositoryInte
 import com.finance.productsvc.domain.order.repository.mapper.OrderDao;
 import com.finance.productsvc.domain.order.repository.po.OrderPO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author daitechang
  * @create: 2020-12-09
  **/
+@Service
 public class OrderRepositoryImpl implements OrderRepositoryInterface {
 
     @Autowired

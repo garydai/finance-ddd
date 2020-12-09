@@ -2,6 +2,7 @@ package com.finance.productsvc.domain.product.repository.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.finance.productsvc.domain.product.repository.po.ProductPO;
+import org.springframework.stereotype.Service;
 
 /**
  * @author daitechang

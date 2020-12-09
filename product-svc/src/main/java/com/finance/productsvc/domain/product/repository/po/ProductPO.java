@@ -13,5 +13,13 @@ public class ProductPO {
 
     String id;
 
+    /**
+     * 担保方式
+     */
+    String guaranteeType;
+
+    /**
+     * 产品名称
+     */
     String productName;
 }

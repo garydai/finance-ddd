@@ -12,7 +12,9 @@ import lombok.Getter;
 public enum ResultCode {
     SUCCESS(200, "Success"),
 
-    FAIL(500, "Fail");
+    INTERNAL_ERROR(500, "Internal Error"),
+
+    REDIS_ERROR(900, "Redis Error");
 
     private final int code;
 

@@ -47,6 +47,6 @@ public class BaseResponseV2<T> {
     }
 
     public static BaseResponseV2 fail() {
-        return new BaseResponseV2(ResultCode.FAIL);
+        return new BaseResponseV2(ResultCode.INTERNAL_ERROR);
     }
 }

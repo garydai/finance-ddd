@@ -8,6 +8,13 @@ import lombok.Data;
  **/
 @Data
 public class Product {
+    /**
+     * 担保方式
+     */
+    String guaranteeType;
 
+    /**
+     * 产品名称
+     */
     String productName;
 }
