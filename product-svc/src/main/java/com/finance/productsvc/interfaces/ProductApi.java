@@ -4,6 +4,8 @@ import com.finance.common.api.BaseResponseV2;
 import com.finance.common.apiversion.APIVersion;
 import com.finance.common.error.ServiceException;
 import com.finance.productsvc.application.service.ProductApplicationService;
+import com.finance.productsvc.domain.product.entity.Product;
+import com.finance.productsvc.interfaces.assembler.ProductAssembler;
 import com.finance.productsvc.interfaces.assembler.SearchConditionAssembler;
 import com.finance.productsvc.interfaces.dto.ProductDTO;
 import com.finance.productsvc.interfaces.dto.SearchConditionDTO;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author daitechang
@@ -30,7 +33,10 @@ public class ProductApi {
 
     @GetMapping()
     public BaseResponseV2<List<ProductDTO>> listProducts(SearchConditionDTO searchConditionDTO) throws ServiceException {
-        return new BaseResponseV2<>(productApplicationService.listProduct(SearchConditionAssembler.toDO(searchConditionDTO)));
+        List<Product> products = productApplicationService.listProduct(SearchConditionAssembler.toDO(searchConditionDTO));
+        return new BaseResponseV2<>(products.stream()
+                .map(ProductAssembler::toDTO)
+                .collect(Collectors.toList()));
 
     }
 }
