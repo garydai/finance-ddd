@@ -12,6 +12,7 @@ import com.finance.productsvc.interfaces.dto.SearchConditionDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,5 +39,10 @@ public class ProductApi {
                 .map(ProductAssembler::toDTO)
                 .collect(Collectors.toList()));
 
+    }
+
+    @GetMapping("/{productId}")
+    public BaseResponseV2<ProductDTO> getProduct(@PathVariable Integer productId) throws ServiceException {
+        return new BaseResponseV2<>(productApplicationService.getProduct(productId));
     }
 }
