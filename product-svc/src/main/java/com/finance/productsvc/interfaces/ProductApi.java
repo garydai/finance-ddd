@@ -4,6 +4,7 @@ import com.finance.common.api.BaseResponseV2;
 import com.finance.common.apiversion.APIVersion;
 import com.finance.common.error.ServiceException;
 import com.finance.productsvc.application.service.ProductApplicationService;
+import com.finance.productsvc.interfaces.assembler.SearchConditionAssembler;
 import com.finance.productsvc.interfaces.dto.ProductDTO;
 import com.finance.productsvc.interfaces.dto.SearchConditionDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,7 @@ public class ProductApi {
 
     @GetMapping()
     public BaseResponseV2<List<ProductDTO>> listProducts(SearchConditionDTO searchConditionDTO) throws ServiceException {
-        productApplicationService.
+        return new BaseResponseV2<>(productApplicationService.listProduct(SearchConditionAssembler.toDO(searchConditionDTO)));
 
     }
 }

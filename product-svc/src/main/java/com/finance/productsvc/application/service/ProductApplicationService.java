@@ -18,7 +18,7 @@ public class ProductApplicationService {
     @Autowired
     ProductDomainService productDomainService;
 
-    List<Product> listProduct(SearchCondition searchCondition) {
+    public List<Product> listProduct(SearchCondition searchCondition) {
         return productDomainService.listProduct(searchCondition);
     }
 }

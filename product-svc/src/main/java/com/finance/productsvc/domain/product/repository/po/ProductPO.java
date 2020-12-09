@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 @TableName("finance_product")
 public class ProductPO {
+
     String id;
+
     String productName;
 }

@@ -1,6 +1,7 @@
 package com.finance.productsvc.domain.product.repository.persistence;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.finance.productsvc.domain.product.entity.valueobject.SearchCondition;
 import com.finance.productsvc.domain.product.repository.facade.ProductRepositoryInterface;
 import com.finance.productsvc.domain.product.repository.mapper.ProductDao;
 import com.finance.productsvc.domain.product.repository.po.ProductPO;
@@ -20,13 +21,16 @@ public class ProductRepositoryImpl implements ProductRepositoryInterface {
     ProductDao productDao;
 
     /**
-     * 列表列表
+     * 产品列表
      *
+     * @param searchCondition
      * @return
      */
     @Override
-    public List<ProductPO> listProduct() {
-        return productDao.selectList(new QueryWrapper<>());
+    public List<ProductPO> listProduct(SearchCondition searchCondition) {
+        return productDao.selectList(new QueryWrapper<ProductPO>()
+                .eq("guarantee_type", searchCondition.getGuaranteeType())
+        );
     }
 
     /**
